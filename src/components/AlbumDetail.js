@@ -7,15 +7,16 @@ import CardSection from './CardSection';
 // image will need a style with width and height in order to render a viewable size
 const AlbumDetail = ({album}) => {
     const {artist, title, thumbnail_image} = album;
+    const {thumbnailStyle, headerContentStyle} = styles;
     return (
         <Card>
             <CardSection>
                 <View>
                     <Image 
-                    style={styles.thumbnailStyle}
+                    style={thumbnailStyle}
                     source={{uri: thumbnail_image}}></Image>
                 </View>
-                <View style={styles.headerContentStyle}>
+                <View style={headerContentStyle}>
                     <Text>{title}</Text>
                     <Text>{artist}</Text>   
                 </View>             

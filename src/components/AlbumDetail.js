@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {Text, View, Image} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
+import Button from './Button';
+
 
 // {album} is destructuring album from props.album
 // image will need a style with width and height in order to render a viewable size
@@ -25,7 +27,10 @@ const AlbumDetail = ({album}) => {
                 <Image 
                 style={imageStyle}
                 source={{uri: image}}></Image>
-            </CardSection>      
+            </CardSection>  
+            <CardSection>
+                <Button></Button>
+            </CardSection>    
         </Card>
     );
 };

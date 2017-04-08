@@ -1,6 +1,7 @@
 //import lib for making a component
 import React, {Component} from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
+import AlbumDetail from './AlbumDetail'
 
 
 class AlbumList extends Component {
@@ -14,11 +15,17 @@ class AlbumList extends Component {
                 this.setState({albums: resData})
             })
     }
+
+    renderAlbums(){
+        return this.state.albums.map( (album) => {
+            return <AlbumDetail key={album.title} album={album}></AlbumDetail>
+        });
+    }
     render(){
         console.log(this.state);
         return (
             <View>
-                <Text>Album List</Text>
+                {this.renderAlbums()}
             </View>
         )
     }   

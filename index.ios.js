@@ -1,13 +1,18 @@
 // Index.ios.js place code in here for ios
 import React from 'react';
-import {Text, AppRegistry} from 'react-native';
-import Header from './src/components/header';
+import {Text, View, AppRegistry} from 'react-native';
+import Header from './src/components/Header';
+import AlbumList from './src/components/AlbumList';
+
 
 // create the component
 
 const App = () => {
   return (
+    <View>
     <Header headerText={'Albums'}/>
+    <AlbumList></AlbumList>
+    </View>
   )
 }
 

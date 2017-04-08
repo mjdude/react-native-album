@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, Linking} from 'react-native';
 import Card from './Card';
 import CardSection from './CardSection';
 import Button from './Button';
@@ -8,7 +8,7 @@ import Button from './Button';
 // {album} is destructuring album from props.album
 // image will need a style with width and height in order to render a viewable size
 const AlbumDetail = ({album}) => {
-    const {artist, title, thumbnail_image, image} = album;
+    const {artist, title, thumbnail_image, image, url} = album;
     const {thumbnailStyle, headerContentStyle, thumbnailContainerStyle, headerTextStyle, imageStyle} = styles;
     return (
         <Card>
@@ -29,7 +29,7 @@ const AlbumDetail = ({album}) => {
                 source={{uri: image}}></Image>
             </CardSection>  
             <CardSection>
-                <Button onPress={() => {console.log(title)}}></Button>
+                <Button onPress={() => Linking.openURL(url)}></Button>
             </CardSection>    
         </Card>
     );
